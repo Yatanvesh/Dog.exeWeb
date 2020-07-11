@@ -1,0 +1,126 @@
+body {
+    animation: colorchange 10s linear 1s infinite; /* animation-name followed by duration in seconds*/
+    /* you could also use milliseconds (ms) or something like 2.5s */
+    -webkit-animation: colorchange 10s linear 0s infinite alternate; /* Chrome and Safari */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 10px;
+}
+
+.flex-container {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@keyframes colorchange {
+    0% {
+        background: #05dfd7;
+        color: white;
+    }
+    33% {
+        background: #f9d56e;
+        color: white;
+    }
+    66% {
+        background: #f9d56e;
+        color: white;
+    }
+    100% {
+        background: #f6bed6;
+        color: white;
+    }
+}
+
+@-webkit-keyframes colorchange /* Safari and Chrome - necessary duplicate */
+{
+    0% {
+        background: #05dfd7;
+        color: white;
+    }
+    33% {
+        background: #f9d56e;
+        color: white;
+    }
+    66% {
+        background: #f9d56e;
+        color: white;
+    }
+    100% {
+        background: #f6bed6;
+        color: white;
+    }
+}
+
+.loader {
+    border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.dogCount {
+    font-size: 4rem;
+    font-weight: bold;
+    font-family: Serif, serif;
+    margin-bottom: 1rem;
+}
+
+.dogImage {
+    border-radius: 1.2rem;
+}
+
+.customButton {
+    display: inline-block;
+    padding: 0.3em 1.2em;
+    margin: 0 0.1em 0.1em 0;
+    margin-top: 1.2rem;
+    border: 0.16em solid rgba(255, 255, 255, 0);
+    border-radius: 2em;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    color: #111111;
+    text-shadow: 0 0.04em 0.04em rgba(0, 0, 0, 0.35);
+    text-align: center;
+    transition: all 0.2s;
+}
+
+.customButton:hover {
+    border-color: rgba(255, 255, 255, 1);
+}
+
+@media all and (max-width: 30em) {
+    .customButton {
+        display: block;
+        margin: 0.2em auto;
+    }
+}
