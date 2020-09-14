@@ -21,7 +21,7 @@ const constructLocation = (lon, lat) => {
 
 }
 const addMarker = (lon, lat) => {
-  markers.addMarker(new OpenLayers.Marker(constructLocation(77.58, 12.978)));
+  markers.addMarker(new OpenLayers.Marker(constructLocation(lon, lat)));
 }
 
 initOpenMap = () => {
@@ -34,7 +34,7 @@ initOpenMap = () => {
       map.getProjectionObject() // to Spherical Mercator Projection
     );
 
-  var zoom = 10;
+  var zoom = 4;
   markers = new OpenLayers.Layer.Markers("Markers");
   map.addLayer(markers);
   map.setCenter(lonLat, zoom);
@@ -59,7 +59,7 @@ const loadData = async () => {
             <div>City: ${city}</div>
             <div>Region: ${region}</div>
             <div>Coordinates: ${ll.toString()}</div>
-            <div>Time Accessed: ${ (new Date(timeAccessed) ).toLocaleTimeString()}</div>
+            <div>Time Accessed: ${ (new Date(timeAccessed) ).toLocaleString()}</div>
         </span></li>`
 
   }))
